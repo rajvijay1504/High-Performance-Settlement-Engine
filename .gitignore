@@ -1,0 +1,10 @@
+# Ignore Build output
+build/
+*.o
+*.out
+
+# Ignore Generated Input files
+input_*.txt
+
+# Ignore Mac system files
+.DS_Store

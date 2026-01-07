@@ -1,0 +1,15 @@
+-----------------------------------------------------------------------------------
+Benchmark                         Time             CPU   Iterations UserCounters...
+-----------------------------------------------------------------------------------
+BM_OptimizedSolver/10           624 ns          624 ns      1115769 items_per_second=16.0293M/s
+BM_OptimizedSolver/100         2991 ns         2989 ns       235161 items_per_second=33.4544M/s
+BM_OptimizedSolver/1000       27693 ns        27692 ns        25216 items_per_second=36.1112M/s
+BM_OptimizedSolver/5000      133704 ns       133636 ns         5282 items_per_second=37.415M/s
+BM_OptimizedSolver_BigO       26.78 N         26.77 N    
+BM_OptimizedSolver_RMS            1 %             1 %    
+BM_LegacySimulation/10          242 ns          242 ns      2921487
+BM_LegacySimulation/100       24472 ns        24467 ns        28440
+BM_LegacySimulation/1000    2275081 ns      2274633 ns          308
+BM_LegacySimulation/5000   59789510 ns     57773500 ns           12
+BM_LegacySimulation_BigO       2.39 N^2        2.31 N^2  
+BM_LegacySimulation_RMS           0 %             0 %    

@@ -1,0 +1,41 @@
+name: Build and Test
+
+# Trigger: Run this every time you push code to the 'main' branch
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    # The "Virtual Computer" OS
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Download your code
+    - uses: actions/checkout@v4
+
+    # Step 2: Install dependencies (CMake, GTest, Benchmark)
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake libgtest-dev libbenchmark-dev googletest
+        # Fix for GTest installation on Ubuntu (sometimes needed)
+        cd /usr/src/gtest && sudo cmake . && sudo make && sudo mv lib/libgtest*.a /usr/lib/
+
+    # Step 3: Configure Build 
+    - name: Configure CMake
+      run: cmake -S . -B build
+
+    # Step 4: Compile (just like 'make')
+    - name: Build
+      run: cmake --build build
+
+    # Step 5: Run Unit Tests
+    - name: Run Tests
+      run: cd build && ./unit_tests
+
+    # Step 6: Run Benchmarks (to see speed in cloud)
+    - name: Run Benchmarks
+      run: cd build && ./perf_test
