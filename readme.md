@@ -30,7 +30,7 @@ A standard day of transactions creates a complex web of debts:
 
 These obligations form a directed graph where edges represent financial liabilities:
 
-![Initial Graph](https://github.com/rajvijay1504/Multi-bank-payment-optimization/assets/120421407/5725ff12-387a-4839-bb3a-9d5dc253d784)
+![Initial Graph](https://github.com/rajvijay1504/High-Performance-Settlement-Engine/assets/120421407/5725ff12-387a-4839-bb3a-9d5dc253d784)
 
 **The Goal:**
 The system must resolve these debts using the minimum number of transactions, respecting that each bank only supports specific payment modes (e.g., HDFC only supports Paytm, while RBI supports all).
@@ -38,7 +38,7 @@ The system must resolve these debts using the minimum number of transactions, re
 **Optimized Result:**
 After processing through the engine, the complex graph is simplified into minimized transactions:
 
-![Optimized Result](https://github.com/rajvijay1504/Multi-bank-payment-optimization/assets/120421407/b6f7ec1d-18d4-4c7c-8cb1-62e4ad28d5b6)
+![Optimized Result](https://github.com/rajvijay1504/High-Performance-Settlement-Engine/assets/120421407/b6f7ec1d-18d4-4c7c-8cb1-62e4ad28d5b6)
 
 ## My Approach
 
@@ -65,7 +65,7 @@ I benchmarked both versions on an 8-Core Apple M-Series chip. The results demons
 | **Complexity (Big-O)** | $2.31 N^2$ | **26.78 N** (Linear scaling) | **Algorithmic Shift** |
 | **Latency (5,000 Banks)** | ~57.7 ms | **~0.13 ms** | **99.7% Reduction** |
 | **Items per Second** | N/A | **37.4 Million** | **High Throughput** |
-| **Speedup Factor** | 1x | **432x Faster** | 🚀 |
+| **Speedup Factor** | 1x | **432x Faster** | **Orders of Magnitude** |
 
 > *Source: Data verified via Google Benchmark; logs are available in `google_benchmark_results.txt`.*
 
